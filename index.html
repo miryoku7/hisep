@@ -38,11 +38,12 @@
   </div>
   <br>
 
-
-  <button>検証</button> 
+  
+  <button id="button">検証</button> 
   <!-- <br> -->
   (数が大きすぎるとPCに負荷がかかります)
-
+  <input type="button" onclick="location.reload();" value="リセット" />
+  
 
   <div class="result">
     <h2>結果</h2>
@@ -56,7 +57,48 @@
     ％<br><br>
     
     <!-- <p> 6/pi^2 =</p><p id="basel"></p> -->
-    6/pi^2 = 0.6079271018540267
+    (6/pi^2 = 0.6079271018540267)
   </div>
+  <br>
+  今までの平均値
+  <input type="text"id='gosa_g' >
+
+  <div class="graph">
+    <div class="graph-left">
+      <ul>
+        <li>5</li>
+        <li>4</li>
+        <li>3</li>
+        <li>2</li>
+        <li>1</li>
+      </ul>
+    </div>
+    <div class="graph-bottom">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+      </ul>
+    </div>
+    <div class="graph-box1 box"></div>
+    <div class="graph-box2 box"></div>
+    <div class="graph-box3 box"></div>
+    <div class="graph-box4 box"></div>
+    <div class="graph-box5 box"></div>
+    <div class="graph-box6 box"></div>
+
+    <div class="graph_main" id="graph_main">
+      <!-- <div class="graph1">・</div>
+      <div class="graph2">・</div>
+      <div class="graph3">・</div> -->
+    </div>
+
+    
+  </div>
+
   <script src="sub.js"></script>
 </body>
+
