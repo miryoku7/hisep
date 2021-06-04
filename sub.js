@@ -1,10 +1,15 @@
+
+
 let so = [];
 let notso = [];
-const button = document.querySelector('button');
+let gosa_g = [];
+// let per_gosa_round = [];
+const button = document.getElementById('button');
 const rand = document.getElementById('random');
 const many = document.getElementById('many');
 const so_r = document.getElementById('per_so');
 const gosa_r = document.getElementById('per_gosa');
+const average = document.getElementById('gosa_g');
 const Basel = 6 / (Math.PI) ** 2;
 
 const Basel_p = document.getElementById('basel');
@@ -60,7 +65,7 @@ function cons() {
   
   console.log('6/pi^2 =',Basel)
   
-  const per_gosa = Math.abs((per_so - Basel) * 100 / Basel);
+  let per_gosa = Math.abs((per_so - Basel) * 100 / Basel);
   
   console.log('パーセント誤差',per_gosa,'%')
 
@@ -68,8 +73,19 @@ function cons() {
 
   gosa_r.value = per_gosa
 
+  let per_gosa_round = Math.round(per_gosa * 100) / 100;
+
+  
+
+  // gosa_g.push(per_gosa_round);
+  gosa_g.push(per_gosa);
+
   so = [];    //reset
   notso = [];
+
+  console.log(gosa_g)
+
+  m(per_gosa_round)
 }
 
 
@@ -87,4 +103,48 @@ function for0() {
 }
 
 button.addEventListener('click', for0)
+
+
+
+
+let k = (gosa_g.length ) ;
+let graph_name = document.getElementsByClassName('graph' + k);
+
+let graph_h = (per_gosa * 40 - 20) + 'px';
+let graph_m_w = (26 + 45 * k ) + 'px';
+
+
+function m(n) {
+
+  
+  let k = (gosa_g.length ) ;
+
+
+  const create = document.createElement('div');
+  create.className = 'graph' + k;
+  create.textContent = '・'
+  create.style.marginLeft = ( 26 + ((k - 1)  * 45) ) + 'px';
+  create.style.marginBottom = ((n * 40 ) - 20) + 'px';
+  create.style.position = 'absolute';
+  create.style.bottom = '0';
+  create.style.fontSize = '26px';
+  create.title = n;
+
+
+  
+  document.getElementById('graph_main').appendChild(create);
+
+  let sum = 0;
+
+  for (let i = 0 ; i < k ; i++ ) {
+
+    sum += gosa_g[i];
+  }
+
+  let ave = (sum / gosa_g.length);
+
+  average.value = ave;
+  
+
+} 
 
