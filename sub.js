@@ -1,5 +1,3 @@
-
-
 let so = [];
 let notso = [];
 const button = document.querySelector('button');
@@ -7,6 +5,11 @@ const rand = document.getElementById('random');
 const many = document.getElementById('many');
 const so_r = document.getElementById('per_so');
 const gosa_r = document.getElementById('per_gosa');
+const Basel = 6 / (Math.PI) ** 2;
+
+const Basel_p = document.getElementById('basel');
+
+// Basel_p.textContent = Basel;
 
 
 
@@ -36,7 +39,6 @@ function for1() {
     let random1 =  Math.ceil(Math.random() * rand.value);
     let random2 = Math.ceil(Math.random() * rand.value);
   
-    // console.log(random1)
     EA(random1, random2);
   
   }
@@ -54,7 +56,7 @@ function cons() {
   
   console.log('互に素である割合',per_so)
   
-  const Basel = 6 / (Math.PI) ** 2;
+  
   
   console.log('6/pi^2 =',Basel)
   
@@ -70,13 +72,11 @@ function cons() {
   notso = [];
 }
 
-// function start(){
 
-// }
 
 function for0() {
 
-  if (rand.value.match(/^\d?\d+$/) && many.value.match(/^\d?\d+$/)) {
+  if (rand.value.match(/^\d?\d+$/) && many.value.match(/^\d?\d+$/) && rand.value !== '0' && many.value !== '0' ) {
 
     for1()
 
@@ -87,3 +87,4 @@ function for0() {
 }
 
 button.addEventListener('click', for0)
+
