@@ -7,6 +7,7 @@ let gosa_g = [];
 const button = document.getElementById('button');
 const rand = document.getElementById('random');
 const many = document.getElementById('many');
+const so_ = document.getElementById('so');
 const so_r = document.getElementById('per_so');
 const gosa_r = document.getElementById('per_gosa');
 const average = document.getElementById('gosa_g');
@@ -55,6 +56,9 @@ function for1() {
 function cons() {
 
   console.log('互いに素',so.length)
+ 
+  so_.value = so.length;
+ 
   console.log('互いに素出ないとき',notso.length)
   
   const per_so = (so.length / (notso.length + so.length) ) ;
