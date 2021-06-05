@@ -112,12 +112,17 @@ ul {
 }
   </style>
 <body>
-  <h1>HiSepの課題</h1>
+    <!-- <h1>HiSepの課題</h1> -->
+
+  <h2>概要</h2>
+  ランダムに選ばれた自然数 a, b に対して、a と b が互に素であるが互いに素である確率を求める。
+  その確率の値と 6/pi^2 の誤差を調べる。
+  
 
   
 
   <div class="random">
-    <h3>ランダム自然数の範囲を指定</h3>
+    <h3>ランダムな自然数 a, b の範囲を指定</h3>
     1から
   
     <input type="text" id="random">
@@ -126,8 +131,8 @@ ul {
    
   </div>
   <div class="many">
-    <h3>数の対（a,b）の個数を指定</h3>
-    （a,b）を
+    <h3>自然数の対（a, b）の個数を指定</h3>
+    自然数の対（a, b）を
 
 
     <input type="text" id="many">
@@ -144,22 +149,28 @@ ul {
 
   <div class="result">
     <h2>結果</h2>
+    <h3>互いに素である組数</h3>
+    <input type="text" id='so'>
 
-    <h3>互いに素の割合</h3>
+    <h3>互いに素である組数が全体に対して占める割合</h3>
     <input type="text" id='per_so'>
     
-    <h3>6/pi^2との誤差(パーセント誤差)</h3>
+    <h3>その割合と6/pi^2との誤差(パーセント誤差)</h3>
+
+    
     
     <input type="text"id='per_gosa' >
     ％<br><br>
     
-    <!-- <p> 6/pi^2 =</p><p id="basel"></p> -->
-    (6/pi^2 = 0.6079271018540267)
+    (6/pi^2 = 0.6079271018540267 )<br>
+    パーセント誤差=（推定値-実際値）/実際値×100％（絶対値）
   </div>
   <br>
-  今までの誤差の平均値
+  今までの平均値
   <input type="text"id='gosa_g' >
-  %
+  <br><br>
+  以下、これまでのパーセント誤差の結果をグラフに出力する<br>
+  縦軸はパーセント誤差(%),横軸は回数を表す
 
   <div class="graph">
     <div class="graph-left">
